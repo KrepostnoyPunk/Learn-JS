@@ -1261,39 +1261,88 @@ function camelize(str) {
     .join('')
 }
 console.log(camelize('background-color'));
+
+for(let char of 'test') {
+    console.log(char);
+}
 */
 
 
 
+//   MAP, SET
+/*
+let test=new Map()
+test.set('key_1', 13)
+
+console.log(test);
+
+console.log(test.has('key_1'));
+console.log(test.get('key_1'));
+
+console.log(test.size);
+
+test.set(1,3)
+    .set(2,4)
+    .set(true,5)
+console.log(test);
+
+let a=test.keys()
+console.log(a);
+
+let b=test.values()
+console.log(b);
+
+let c=test.entries()
+console.log(c);
+
+let test={
+    name: "i'm",
+    age: 20
+}
+console.log(test);
+let map=new Map(Object.entries(test))
+console.log(map);
+
+let recipe=Object.fromEntries([
+    ["banana", 1],
+    ["avocado", 2,]
+])
+console.log(recipe);
+
+let guests=['john', 'simon', 'marcus', 'herman','john', 'marcus']
+
+let set=new Set(guests)
+
+set.add('anna')
+console.log(set.size);
+
+set.add('john')
+console.log(set.size);
+
+function unique(arr) {
+    return new Set(arr)
+}
+console.log(unique(['john', 'simon', 'marcus', 'herman','john', 'marcus']));
+
+function sumSalaries(salaries) {
+    let sum=0
+    for(let salary of Object.values(salaries)) {
+        sum+=salary
+    }
+    return sum
+}
+let salaries = {
+    "john": 10000,
+    "pete": 3000,
+    "marcus": 2850
+  };
+console.log(sumSalaries(salaries));
+*/
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//   DESTRUCTURING ASSIGNMENT
+/**/
 
 
 
