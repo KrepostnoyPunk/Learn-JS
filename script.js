@@ -1342,62 +1342,122 @@ console.log(sumSalaries(salaries));
 
 
 //   DESTRUCTURING ASSIGNMENT
-/**/
+/*
+let arr=['Rockstar','Sucker']
+let [first, last]=arr
+console.log(first);
+console.log(last);
+
+let [a,,b]=[1,2,3,4,5]
+console.log(b);
+
+let [a,b,c]='abc'
+console.log(a);
+console.log(b);
+console.log(c);
+
+let a='a'
+let b='b'
+console.log(a);
+console.log(b);
+[a,b]=[b,a]
+console.log(a);
+console.log(b);
+
+let [n1,n2,...rest]=[12,3,4,5,4,6,57,8,89]
+console.log(rest[0]);
+console.log(rest[3]);
+console.log(rest.length);
+
+let [a='Strong',b='Anal']=['Rob']
+console.log(a);
+console.log(b);
+
+let a={
+    title: 'Rock',
+    height: '2m+',
+    strength: 'infinity...'
+}
+// console.log(title);
+let{title, height, strength}=a
+console.log(title);
+
+let {height, width, title} = { title: "Menu", height: 200, width: 100 }
+console.log(height);
+
+let a={
+    title: 'Rock'
+}
+let {strength='infinity...',height='2m+'}=a
+console.log(strength);
+
+let user={
+    name: 'Herman',
+    years: 23
+}
+let {name,years:age,isAdmin=false}=user
+console.log(name);
+console.log(age);
+console.log(isAdmin);
+
+function elementsReturn(arr) {
+    let [el1,el2]=arr
+    return [el1,el2]
+}
+console.log(elementsReturn(['ray','rob','bob','sob','nob','dob']));
+
+let a=1
+let b=2
+console.log(a);
+console.log(b);
+[a,b]=[b,a]
+console.log(a);
+console.log(b);
+
+let book={
+    title: '1984',
+    price: '5$'
+}
+let {title,price}=book
+console.log(title);
+console.log(price);
+
+let user={
+    name: 'Mack',
+    age: '90'
+}
+function userData(obj) {
+    let{name,age}=obj
+    return `${name}: ${age}`
+}
+console.log(userData(user));
+*/
 
 
 
+//   DATE and time
+/*
+let now=new Date()
+console.log(now);
 
+let someday=new Date('2003-11-17')
+console.log(someday);
 
+let nowNow=new Date(2023,11)
+console.log(nowNow);
 
+let now=new Date()
+console.log(now.getHours());
+console.log(now.getUTCHours());
 
+console.log(now.getTime());
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let now=new Date()
+console.log(now.getDay());
+console.log(now.getDate());
+console.log(now.getMonth());
+console.log(now.getFullYear());
+*/
 
 
 
