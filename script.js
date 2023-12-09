@@ -1457,31 +1457,61 @@ console.log(now.getDay());
 console.log(now.getDate());
 console.log(now.getMonth());
 console.log(now.getFullYear());
+
+let a=new Date()
+a.setMonth(1)
+console.log(a);
+
+let date=new Date(2023, 11, 32)
+alert(date)
+
+let date=new Date(2016, 1, 28)
+date.setDate(date.getDate()+2)
+console.log(date);
+
+let date_1=new Date(2017, 1, 28)
+date_1.setDate(date_1.getDate()+2)
+console.log(date_1);
+
+let date=new Date()
+date.setSeconds(date.getSeconds()+5)
+console.log(date);
+
+let start=new Date()
+for (let index = 0; index < 100000; index++) {
+    let doSmt=index*index*index
+}
+let end=new Date()
+console.log(`Loop is done for ${end-start} ms`);
+
+let date=new Date(2012, 1, 20, 3, 12)
+console.log(date);
+
+function getWeekDayShort(date) {
+    let days=['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
+    return days[date.getDay()] 
+}
+let date=new Date(2023, 11, 9)
+console.log(getWeekDayShort(date));
+
+function getEuDay(date) {
+    let day=date.getDay()
+    if(day===0) {
+        day=7
+    }
+    return day
+}
+let date=new Date(2023, 11, 9)
+console.log(getEuDay(date));
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function getDateAgo(date, days) {
+    let dateCopy=new Date(date)
+    dateCopy.setDate(date.getDate()-days)
+    return dateCopy.getDate()
+}
+let date=new Date(2023, 11, 9)
+console.log(getDateAgo(date, 4));
+console.log(getDateAgo(date, 365));
 
 
 
