@@ -1503,7 +1503,7 @@ function getEuDay(date) {
 }
 let date=new Date(2023, 11, 9)
 console.log(getEuDay(date));
-*/
+
 function getDateAgo(date, days) {
     let dateCopy=new Date(date)
     dateCopy.setDate(date.getDate()-days)
@@ -1513,12 +1513,20 @@ let date=new Date(2023, 11, 9)
 console.log(getDateAgo(date, 4));
 console.log(getDateAgo(date, 365));
 
+function getLastMonthDay(year, month) {
+    let date=new Date(year, month+1, 0) //дата сама себя поправит; если передать 0, то это значение будет соответствовать «один день перед первым числом месяца»; «последнее число прошлого месяца».
+    return date.getDate()
+}
+console.log(getLastMonthDay(2024, 1));
 
-
-
-
-
-
+function getSecondsToTomorrow() {
+    let now=new Date()
+    let tomorrow=new Date(now.getFullYear(), now.getMonth(),  now.getDate()+1)
+    let seconds=tomorrow-now
+    return Math.round(seconds/1000)
+}
+console.log(getSecondsToTomorrow());
+*/
 
 
 
