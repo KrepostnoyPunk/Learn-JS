@@ -1526,56 +1526,119 @@ function getSecondsToTomorrow() {
     return Math.round(seconds/1000)
 }
 console.log(getSecondsToTomorrow());
+
+let now=new Date()
+
+console.log(now);
+
+console.log(now.getFullYear());
+
+console.log(now.getMonth());
+
+console.log(now.getDay());
+
+let someday=new Date(2024, 3, 21)
+console.log(someday);
+
+console.log(someday.getDate());
+
+console.log(someday.getHours());
+
+console.log(someday.getMinutes());
+
+console.log(someday.getSeconds());
+
+console.log(someday.setFullYear(2025)
+);
+console.log(someday.getFullYear());
+
+console.log(now>someday);
+
+let diff=someday-now
+console.log(diff);
 */
 
 
 
+//   JSON, toJSON
+/*
+let user={
+    name: 'Marcus',
+    age: 20,
+    courses:['html','css','js', 'react', '...'],
+    isAdmin: true,
+    wife: false
+}
+
+console.log(typeof user);
+
+console.log(JSON.stringify(user_1, ['age','wife']));
+
+let jsonUser=JSON.stringify(user)
+
+console.log(typeof jsonUser);
+
+console.log(jsonUser);
+
+let user_1={
+    name: 'Marcus',
+    age: 20,
+    courses:['html','css','js', 'react', '...'],
+    isAdmin: true,
+    wife: false
+}
+
+let user_2={
+    name: 'Marcus',
+    age: 20,
+    courses:['html','css','js', 'react', '...'],
+    isAdmin: true,
+    wife: false
+}
+
+user_2.friends=user_1.wife
+user_1.friends=user_2.wife
+
+console.log(JSON.stringify(user_2));
+
+let user_1={
+    name: 'Marcus',
+    age: 20,
+    courses:['html','css','js', 'react', '...'],
+    isAdmin: true,
+    wife: false
+}
+console.log(JSON.stringify(user_1))
+console.log(JSON.stringify(user_1, null, 2));
+
+let nums="[1,2,3,4,5]"
+console.log(nums);
+nums=JSON.parse(nums)
+console.log(nums);
+
+let user = '{ "name": "John", "age": 35, "isAdmin": false, "friends": [0,1,2,3] }';
+user=JSON.parse(user)
+console.log(user.name);
+
+let str = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}';
+// let meetup=JSON.parse(str)
+// console.log((meetup.date.getDate()));
+let meetup=JSON.parse(str, function(key, value) {
+    if(key=='date') return new Date(value)
+    return value
+})
+console.log((meetup.date.getDate()));
+
+let user = {
+    name: "Dmitry",
+    age: 35
+};
+console.log(JSON.stringify(user, null, 2));
+let userBack=JSON.parse(JSON.stringify(user, null, 2))
+console.log(userBack);
+*/
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//   RECURSION
+/**/
