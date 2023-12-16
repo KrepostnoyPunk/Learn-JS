@@ -1641,7 +1641,7 @@ console.log(userBack);
 
 
 //   RECURSION
-/**/
+/*
 function pow(x,n) { 
     if(n===1) {
         return x
@@ -1660,16 +1660,63 @@ function pow_2_0(x,n){ // memory friendly
 }
 console.log(pow_2_0(2,4));
 
+let list={value:1}
+list.next={value:2}
+list.next.next={value:3}
+console.log(list);
+console.log(JSON.stringify(list));
+
+function sum(n){
+    if(n===1) {
+        return 1
+    } else {
+        return n+sum(n-1)
+    }
+}
+console.log(sum(3));
+console.log(sum(10000));
+
+function sum_2_0(n){
+    let sum=0
+    for (let index = 0; index <=n; index++) {
+        sum+=index
+    }
+    return sum
+}
+console.log(sum_2_0(3));
+console.log(sum_2_0(10000));
+
+function factorial(n){ // n! = n*(n-1)
+    if(n!=1){
+        return n*factorial(n-1)
+    } else {
+        return 1
+    }
+}
+console.log(factorial(5));
+
+let list = {
+    value: 1,
+    next: {
+      value: 2,
+      next: {
+        value: 3,
+        next: {
+          value: 4,
+          next: null
+        }
+      }
+    }
+  };
+function listPrint(){
+    console.log(list.value);
+    if(list.next){
+        listPrint(list.next)
+    }
+}
+listPrint(list)
+*/
 
 
 
-
-
-
-
-
-
-
-
-
-
+//   SCOPE, CLOSURE
