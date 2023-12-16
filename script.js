@@ -1642,3 +1642,34 @@ console.log(userBack);
 
 //   RECURSION
 /**/
+function pow(x,n) { 
+    if(n===1) {
+        return x
+    } else {
+        return x*pow(x, n-1)
+    }
+}
+console.log(pow(2,4));
+
+function pow_2_0(x,n){ // memory friendly
+    let result=1
+    for (let index = 0; index < n; index++) {
+        result*=x
+    }
+    return result
+}
+console.log(pow_2_0(2,4));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
