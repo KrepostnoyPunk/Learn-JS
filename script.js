@@ -781,6 +781,27 @@ let calculus={
 calculus.read()
 console.log(calculus.sum());
 console.log(calculus.mul());
+
+let user={
+    age: 20,
+    name: 'Stepan'
+}
+function grr(){
+    console.log(this);
+}
+user.f=grr
+user.f()
+
+let admin={
+    age: 20,
+    name: 'Stepan',
+    greeting: function () {
+        console.log(`Hello, my name is ${this.name}`);
+    }
+}
+admin.greeting()
+
+console.log(this);
 */
 
 
@@ -824,6 +845,68 @@ function Accumulator(startValue) {
 let accumula=new Accumulator(3)
 accumula.read()
 console.log(accumula.value);
+
+function User(name){
+    this.name=name;
+    this.isAdmin=false;
+}
+let user=new User('Max')
+console.log(user.name);
+console.log(user.isAdmin);
+
+function Animal(name, sound){
+    this.name=name;
+    this.sound=sound
+}
+let cat=new Animal('cat','meow')
+console.log(cat.name);
+console.log(cat.sound);
+let dogo=new Animal('dog','wof')
+console.log(dogo.name);
+console.log(dogo.sound);
+// ...
+
+function User(name){
+    this.name=name;
+    this.isAdmin=false;
+    this.greeting=function(){
+        console.log(`Hello, my name is ${this.name}!`);
+    }
+}
+let user=new User('Jack')
+user.greeting()
+let user_2=new User('Max')
+user_2.greeting()
+
+function Person(name){
+    this.name=name;
+}
+let person=new Person('Alice')
+console.log(person.name);
+
+function Person(name, age){
+    this.name=name;
+    this.age=age;
+    this.greeting=function(){
+        console.log(`Hello, my name is ${this.name}, i'm ${this.age} years old`);
+    }
+}
+let person=new Person('Alice', 20)
+console.log(person.name);
+console.log(person.age);
+person.greeting()
+
+function Employee(name, position){
+    this.name=name;
+    this.position=position;
+    this.who=function(){
+        console.log(`My name is ${this.name} and i'm a ${this.position}`);
+    }
+}
+let empl_1=new Employee('Danila','frontend developer')
+empl_1.who()
+let empl_2=new Employee('Alex', 'backend developer')
+empl_2.who()
 */ 
 
 
@@ -857,6 +940,41 @@ console.log(user);
 
 let globalS=Symbol.for('name')
 console.log(globalS.description);
+
+let symbol=Symbol('symbol')
+console.log(symbol);
+console.log(symbol.toString());
+console.log(symbol.description);
+
+let id=Symbol('id')
+let ip=Symbol('ip')
+let user={
+    age: 20,
+    name: 'Stepan',
+    [ip]: true
+}
+user[id]=id;
+console.log(user[id]);
+console.log(user[ip]);
+
+let id=Symbol('id')
+let user={
+    age: 20,
+    name: 'Stepan',
+    [id]: true
+}
+for (const key in user) {
+    console.log(key);
+}
+console.log(user[id]);
+let clone=Object.assign({}, user)
+console.log(user);
+
+let id=Symbol.for('id')
+let idClone=Symbol.for('id')
+console.log(id.description);
+console.log(idClone.description);
+console.log(id===idClone);
 */
 
 
@@ -1720,3 +1838,948 @@ listPrint(list)
 
 
 //   SCOPE, CLOSURE
+/*
+{
+    let a='155'
+}
+console.log(a);
+
+{
+    let a='155'
+    console.log(a);
+}
+
+{
+    let a='132'
+    console.log(a);
+}
+
+for (let index = 0; index < 11; index++) {
+    console.log(index);
+}
+console.log(index);
+
+function makeCounter() {
+    let count=0
+    return function(){
+        return count++
+    }
+}
+let counter=makeCounter()
+console.log(counter());
+console.log(counter());
+console.log(counter());
+console.log(counter());
+console.log(counter());
+console.log(counter());
+
+function sum(a){
+    return (b)=>{
+        return a+b
+    }
+}
+console.log(sum(1)(2));
+*/
+
+
+
+//   FUNCTION OBJECT, NFE
+/*
+function say(){
+    console.log('hohoho');
+}
+console.log(say.name);
+
+console.log(say.length);
+
+function a(){
+    console.log('happy ny');
+    a.counter++
+}
+a.counter=0
+a()
+a()
+console.log(`a is called ${a.counter} times`);
+*/
+
+
+
+//   setTimeout, setInterval
+/*
+function a(){
+    console.log('ho');
+}
+setInterval(a,1000)
+
+function a(x, n){
+   console.log(x+n);
+}
+setTimeout(a,1000,2,2)
+
+function a(from, to) {
+    let curr=from
+    let timer=setInterval(function() {
+        console.log(curr);
+        if(curr==to) {
+            clearInterval(timer)
+        }
+        curr++
+    },1000)
+}
+a(1,10)
+*/
+
+
+
+//   GET, SET
+/*
+let chad={
+    name: 'Giga',
+    surname: 'Chad',
+
+    get fullName() {
+        return `${this.name} ${
+            this.surname
+        }`
+    },
+
+    set fullName(value) {
+        [this.name, this.surname]=value.split(" ")
+    }
+}
+console.log(chad.fullName);
+chad.fullName="Bobr Kurwa"
+console.log(chad.fullName);
+console.log(chad.name);
+*/
+
+
+
+//   PROTOTYPES, INHERITANCE
+/*
+let user={
+    age: 20
+}
+let admin={
+    name: 'Stepan'
+}
+admin.__proto__=user
+console.log(admin.age);
+
+let a={
+    a:true,
+    walk(){
+        alert('go')
+    }
+}
+let b={
+    b:true,
+    __proto__: a
+}
+b.walk()
+
+let a={
+    a:true,
+    walk(){
+        alert('go')
+    }
+}
+let b={
+    b:true,
+    __proto__: a
+}
+b.walk=function(){
+    alert('NO')
+}
+b.walk()
+
+let a={
+    a:true,
+    walk(){
+        alert('go')
+    }
+}
+let b={
+    b:true,
+    __proto__: a
+}
+for(let prop in b){
+    console.log(prop);
+}
+
+let head = {
+    glasses: 1
+  };
+  
+  let table = {
+    pen: 3,
+    __proto__: head
+  };
+  
+  let bed = {
+    sheet: 1,
+    pillow: 2,
+    __proto__: table
+
+  };
+  
+  let pockets = {
+    money: 2000,
+    __proto__: bed
+  };
+console.log(pockets.pen);
+*/
+
+
+
+//   F.prototype
+/*
+let animal={
+    eats: true
+}
+
+function Rabbit(name){
+    this.name=name
+}
+
+Rabbit.prototype=animal
+
+let rabbit=new Rabbit('Nigga') 
+
+console.log(rabbit.eats);
+
+function Rabbit(){
+    
+}
+console.log(Rabbit.prototype.constructor==Rabbit);
+
+let rabbit=new Rabbit()
+console.log(rabbit.constructor==Rabbit);
+
+let rabbit2=new rabbit.constructor()
+console.log(rabbit2);
+*/
+
+
+
+//   EMBEDDED PROTOTYPES
+/*
+let obj={}
+console.log(obj);
+
+String.prototype.show=function(){
+    alert(this)
+}
+'Sex'.show()
+
+let obj={
+    0: 'Hello',
+    1: 'world!',
+    length: 2
+}
+obj.join=Array.prototype.join
+console.log(obj.join(', '));
+
+function f() {
+    alert("Hello!");
+}
+Function.prototype.defer=function(ms){
+    setInterval(this, ms)
+}
+f.defer(3000)
+*/
+
+
+
+//   PROTOTYPES METHODS, OBJECTS WITHOUT __proto__
+/*
+let animal={
+    eats: true
+}
+let rabbit=Object.create(animal)
+console.log(rabbit.eats);
+console.log(Object.getPrototypeOf(rabbit))
+console.log(Object.getPrototypeOf(rabbit)===animal);
+*/
+
+
+
+//   CLASS: BASE SYNTAX
+/*
+class User{
+    constructor(name){
+        this.name=name
+    }
+    sayHi(){
+        alert(`Hi my name is ${this.name}`)
+    }
+}
+
+let user_1=new User('Mark')
+user_1.sayHi()
+console.log(user_1.name);
+
+user_1.name='Stepan'
+user_1.sayHi()
+console.log(user_1.name);
+
+class User{
+    constructor(name){
+        this.name=name
+    }
+    sayHi(){
+        alert(`Hi my name is ${this.name}`)
+    }
+}
+
+console.log(typeof User);
+*/
+
+
+
+//   CLASS INHERITANCE
+/*
+class Animals{
+    constructor(name) {
+        this.speed=0
+        this.name=name
+    }
+    run(speed) {
+        this.speed=speed
+        console.log(`${this.name} has speed ${this.speed}`);
+    }
+    stop() {
+        this.speed=0
+        console.log(`${this.name} is stopped`);
+    }
+}
+let animal=new Animals('Jack')
+animal.run(3)
+animal.stop()
+
+class Rabbit extends Animals {
+    hide() {
+        console.log(`${this.name} is hiding!`);
+    }
+}
+let rabbit=new Rabbit('John')
+
+rabbit.run(5)
+rabbit.hide()
+
+class Rabbit_1 extends Animals {
+    hide() {
+        console.log(`${this.name} is hiding!`);
+    }
+    stop(){
+        super.stop()
+        this.hide()
+    }
+}
+let rabbit_1=new Rabbit_1('Mark')
+
+rabbit_1.run(18)
+rabbit_1.stop()
+
+class Animals{
+    constructor(name) {
+        this.speed=0
+        this.name=name
+    }
+    run(speed) {
+        this.speed=speed
+        console.log(`${this.name} has speed ${this.speed}`);
+    }
+    stop() {
+        this.speed=0
+        console.log(`${this.name} is stopped`);
+    }
+}
+let animal=new Animals('Jack')
+
+class Rabbit extends Animals {
+    constructor(name, earLength) {
+        super(name)
+        this.speed=0
+        this.name=name
+        this.earLength=earLength
+    }
+    hide() {
+        console.log(`${this.name} is hiding!`);
+    }
+}
+let rabbit=new Rabbit('Mr.White', 10)
+console.log(rabbit.name);
+console.log(rabbit.earLength);
+*/
+
+
+
+//   STATIC PROPERTIES AND METHODS
+/*
+class User{
+    static staticMethod(){
+        console.log(this===User);
+    }
+}
+User.staticMethod()
+
+class Article{
+    constructor(title, date){
+        this.title=title
+        this.date=date
+    }
+    static compare(articleA, articleB) {
+        return articleA.date-articleB.date
+    }
+}
+let articles = [
+    new Article("HTML", new Date(2019, 1, 1)),
+    new Article("CSS", new Date(2019, 0, 1)),
+    new Article("JavaScript", new Date(2019, 11, 1))
+];
+articles.sort(Article.compare)
+console.log(articles[0].title);
+
+class Article{
+    constructor(title, date){
+        this.title=title
+        this.date=date
+    }
+    static createTodays(){
+        return new this('Today', new Date())
+    }
+}
+let article=Article.createTodays()
+console.log(article);
+
+class Article{
+    static author='J.M.'
+}
+*/
+
+
+
+//   Private and protected methods and properties
+/*
+class CoffeeMachine{
+    waterAmount=0;
+
+    constructor(power){
+        this.power=power
+        console.log(`Coffemachine created, power: ${power}`);
+    }
+}
+let coffeeMachine=new CoffeeMachine(100)
+coffeeMachine.waterAmount=300
+
+class CoffeeMachine{
+    _waterAmount=0;
+
+    setWaterAmount(value){
+        if(value<0){
+            alert("ERROR. Water amount can't be -value")
+            this._waterAmount=value
+        }
+    }
+
+    getWaterAmount(){
+        return this._waterAmount
+    }
+
+    constructor(power){
+        this.power=power
+    }
+
+    
+}
+let coffeeMachine=new CoffeeMachine(100)
+coffeeMachine.setWaterAmount(-120)
+
+class CoffeeMachine{
+    constructor(power){
+        this._power=power
+    }
+
+    get power(){
+        return this._power
+    }
+}
+let coffeeMachine = new CoffeeMachine(300)
+console.log(`Power: ${coffeeMachine.power}W`)
+coffeeMachine.power=21
+console.log(`Power: ${coffeeMachine.power}W`)
+
+class CoffeeMachine{
+    #waterLimit=1000
+
+    #checkWater(value){
+        if(value<0) console.log("ERROR. Water amount can't be -value!");
+        if(value>this.#waterLimit) console.log("ERROR. Too much water!");
+    }
+}
+let coffeeMachine=new CoffeeMachine()
+coffeeMachine.#checkWater()
+coffeeMachine.#waterLimit = 1000;
+*/
+
+
+
+//   Extension of built-in classes
+/*
+class Awkward extends Array{
+    isEmpty(){
+        return this.length===0
+    }
+}
+let arr=new Awkward(1,2,5,10,50)
+console.log(arr.isEmpty());
+
+let filteredArr=arr.filter(item => item => 10)
+console.log(filteredArr);
+console.log(filteredArr.isEmpty());
+*/
+
+
+
+//   Class check: "instanceof"
+/*
+class Rabbit{}
+let rabbit_w=new Rabbit()
+console.log(rabbit_w instanceof Rabbit);
+
+function Rabbit(){}
+console.log(new Rabbit() instanceof Rabbit);
+
+let arr=[12,2,344,3,545,4]
+console.log(arr instanceof Array);
+console.log(arr instanceof Object);
+*/
+
+
+
+//   Impurities
+/*
+let sayHiMixin={
+    sayHi(){
+        console.log(`Hi, ${this.name}`);
+    },
+    sayBye(){
+        console.log(`Bye, ${this.name}`);
+    }
+}
+
+class User{
+    constructor(name){
+        this.name=name
+    }
+}
+
+Object.assign(User.prototype, sayHiMixin)
+
+let user=new User('Courier Six')
+
+user.sayHi()
+user.sayBye()
+*/
+
+
+
+//   Error handling, "try..catch".
+/*
+try{
+    console.log("Start try");
+    aboba
+    console.log("End try(never complete)");
+} catch(error){
+    console.log("ERROR");
+    console.log(error.name);
+    console.log(error.message);
+    console.log(error.stack);
+}
+
+let incorrectJson="{ Blablabla }";
+try{
+    let data=JSON.parse(incorrectJson);
+    console.log(data.name);
+} catch(e) {
+    console.log("ERROR. Sorry, data has errors, trying to solve...");
+    console.log(e.name);
+    console.log(e.message);
+}
+*/
+
+
+
+//   User Errors, Error extension
+/*
+class ValidationError extends Error{
+    constructor(message) {
+        super(message)
+        this.name="ValidationError"
+    }
+}
+
+function test() {
+ throw new ValidationError('o_O')       
+}
+
+try {
+    test()
+} catch (error) {
+    console.log(error);
+}
+
+class ValidationError extends Error{
+    constructor(message) {
+        super(message)
+        this.name="ValidationError"
+    }
+}
+
+class PropertyRequired extends ValidationError{
+    constructor(property){
+        super("Property not found:" + property)
+        this.name="PropertyRequired"
+        this.property=property
+    }
+}
+
+class ReadError extends Error{
+    constructor(message, cause){
+        this.cause=cause
+        this.name="ReadError"
+    }
+}
+
+class ValidationError extends Error{
+    constructor(message) {
+        super(message)
+        this.name="ValidationError"
+    }
+}
+
+class PropertyRequiredError extends ValidationError{
+    constructor(property){
+        super("Property not found:" + property)
+        this.name="PropertyRequired"
+        this.property=property
+    }
+}
+
+function validateUser(user){
+    if(!user.age){
+        throw new PropertyRequiredError('age')
+    }
+    if(!user.name){
+        throw new PropertyRequiredError('name')
+    }
+}
+
+function readUser(json){
+    let user
+}
+
+try{
+    user=JSON.parse(json)
+} catch(e){
+    if(e instanceof SyntaxError){
+        throw new ReadError('Syntax error', e)
+    } else{
+        throw e
+    }
+}
+
+try {
+    validateUser(user)
+} catch (error) {
+    if(error instanceof ValidationError){
+        throw new ReadError('Validatiob error', error)
+    } else{
+        throw error
+    }
+}
+
+try {
+    readUser('{sgitty json}')
+} catch (error) {
+    if(error instanceof ReadError){
+        console.log(e);
+        console.log("Source error:" + error.cause);
+    } else{
+        throw error
+    }
+}
+
+class FormatError extends SyntaxError{
+    constructor(message){
+        super(message)
+        this.name="FormatError"
+    }
+}
+let err=new FormatError('format error')
+console.log(err.name);
+console.log(err.message);
+
+console.log(err instanceof FormatError);
+console.log(err instanceof SyntaxError);
+*/
+
+
+
+//   Introduction: callbacks
+/*
+function loadOrders(src){
+    let script=document.createElement("script")
+    script.src=src
+    document.head.append(script)
+}
+loadOrders("async.js")
+
+newFunction()
+
+function loadOrders(src, callback){
+    let script=document.createElement("script")
+    script.src=src
+    script.onload=()=>callback(script)
+    document.head.append(script)
+}
+loadOrders("async.js", function(){
+    newFunction()
+})
+
+function loadOrders(src, callback){
+    let script=document.createElement("script")
+    script.src=src
+    script.onload=()=>callback(null, script)
+    script.onerror=()=>callback(new Error(`Orders isn't loaded: ${src}`))
+    document.head.append(script)
+}
+loadOrders("async.js", function(error,script){
+    if(error){
+        handleError(error)
+    } else {
+        loadOrders("async.js", function(error,script){
+            ...
+        }
+    }
+})
+*/
+
+
+
+//   Promises
+/*
+let promise1=new Promise(function (resolve, reject) {
+    setTimeout(()=>resolve(console.log('done')), 1000)
+});
+
+let promise2=new Promise(function (resolve, reject) {
+    setTimeout(()=>reject(new Error(console.log('ERROR'))), 2000)
+});
+
+function loadScript(src){
+    return new Promise(function(resolve, reject){
+        let script=document.createElement('script')
+        script.src=src
+
+        script.onload=()=>resolve(script)
+        script.onerror=()=>reject(new Error(`Script loading error ${src}`))
+
+        document.head.append(script)
+    })
+}
+
+let promise=loadScript("async.js")
+promise.then(
+    script=>console.log(`${script.src} succesfully loaded`),
+    error=>console.log(`Error: ${error.message}`)
+)
+
+const delay=(time=2000)=>{
+    let promise=new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(console.log('done'))
+        }, time)
+    })
+    return promise
+}
+delay(3000).then(function(){
+    console.log('This is worku=ing!');
+})
+*/
+
+
+
+//   Promises Chain
+/*
+new Promise(function(resolve, reject) {
+    setTimeout(()=>resolve(1), 1000)
+}).then(function(result) {
+    console.log(result);
+    return result*2
+}).then(function(result) {
+    console.log(result);
+    return result*2
+}).then(function(result) {
+    console.log(result);
+    return result*2
+})
+
+new Promise(function(resolve, reject) {
+    setTimeout(()=>resolve(1), 1000)
+}).then(function(result) {
+    console.log(result);
+    return new Promise(function(resolve, reject){
+        setTimeout(()=>resolve(result*2),1000)
+    })
+}).then(function(result) {
+    console.log(result);
+    return new Promise(function(resolve, reject){
+        setTimeout(()=>resolve(result*2),1000)
+    })
+}).then(function(result) {
+    console.log(result);
+    return new Promise(function(resolve, reject){
+        setTimeout(()=>resolve(result*2),1000)
+    })
+})
+
+function loadScript(src){
+    return new Promise(function(resolve, reject){
+        let script=document.createElement('script')
+        script.src=src
+
+        script.onload=()=>resolve(script)
+        script.onerror=()=>reject(new Error(`Script loading error ${src}`))
+
+        document.head.append(script)
+    })
+}
+loadScript('first.js')
+.then(script=>loadScript('second.js'))
+.then(script=>loadScript('endless.js'))
+
+fetch('/bla/bla-bla/user.json')
+.then(response=>response.text())
+//.then(response=>response.json())
+.then(text=>console.log(text))
+
+
+fetch('/bla/bla-bla/user.json')
+.then(response=>response.json())
+.then(userEl=>fetch(`https://api.github.com/users/${user.name}`))
+.then(response=>response.json())
+.then(gitHubUserAvatar=>new Promise((resolve,reject)=>{
+    let img=document.createElement('img')
+    img.src=gitHubUserAvatar.avatar_url
+    img.className="avatar-example"
+    document.body.append(img)
+    setTimeout(()=>{img.remove();resolve(gitHubUserAvatar), 3000})
+}))
+
+function loadJSON(url){
+    return fetch(url)
+    .then(response=>response.json())
+}
+
+function loadUserInfo(name){
+    return fetch(`https://api.github.com/users/${name}`)
+    .then(response=>response.json())
+}
+
+
+function showUserAvatar(userAvatar){
+    return new Promise((resolve,reject)=>{
+        let img=document.createElement('img')
+        img.src=userAvatar.avatar_url
+        document.body.append(img)
+        setTimeout(()=>{img.remove();resolve(userAvatar), 3000})
+    })
+}
+
+loadJSON('/article/promise-chaining/user.json')
+.then(user=>loadUserInfo(user.name))
+.then(showUserAvatar)
+*/
+
+
+
+//   Promises: errors handling
+/*
+fetch('https://bla/bla-bla.com')
+.then(response=>response.json())
+.catch(error=>console.log(error))
+
+new Promise((resolve,reject)=>{
+    throw new Error('Test error')
+})
+.catch(error=>console.log('Error is disabled'))
+.then(console.log('Going next...'))
+
+new Promise((resolve, reject)=>{
+    throw new Error(ReferenceError)
+})
+.catch(err=>{
+    if(err instanceof ReferenceError) {
+        console.log('Error dealed');
+    } else{
+        console.log('Can not deal with it');
+        throw err
+    }
+})
+.then(function(){
+    console.log('sex');
+})
+.catch(err=>{
+    console.log(`Unknown ERROR: ${err}`);
+})
+
+window.addEventListener('unhandledrejection', event=>{
+    console.log(event.promise);
+    console.log(event.reason);
+})
+
+new Promise((resolve, reject)=>{
+    throw new Error(ReferenceError)
+})
+*/
+
+
+
+// Promise API
+/**/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
