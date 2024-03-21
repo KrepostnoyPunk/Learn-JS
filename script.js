@@ -751,11 +751,10 @@ console.log(b);
 let user={
     name: 'Connor',
     age: 103,
-    sayHi(){  // === "sayHi : function sayHi() {...}"
+    sayHi : function () {...}"
         alert(`Hi ${this.name}!`)
     }
 }
-
 user.sayHi()
 
 let car={
@@ -796,7 +795,7 @@ let admin={
     age: 20,
     name: 'Stepan',
     greeting: function () {
-        console.log(`Hello, my name is ${this.name}`);
+        console.log(`Hello, my name is ${this.name}, i'm ${this.age} years old!`);
     }
 }
 admin.greeting()
@@ -828,7 +827,7 @@ function Calculator(){
     };
     this.read=function(){
         this.a=+prompt('a?',0)
-        this.b=+prompt('b',0)
+        this.b=+prompt('b?',0)
     }
 }
 let calculus=new Calculator()
@@ -978,6 +977,41 @@ console.log(id===idClone);
 */
 
 
+//   OBJECTS COMRARISON AND OPERATIONS
+/*
+let obj_1={
+    name: 'Stepan',
+    age: 20
+}
+let obj_2={
+    f: true,
+    s: false
+}
+console.log(obj_1-obj_2);
+console.log(obj_1+obj_2);
+console.log(obj_1*obj_2);
+console.log(obj_1/obj_2);
+console.log(obj_1==obj_2);
+alert(obj_1)
+alert(obj_2)
+
+let obj_1={
+    f: 31,
+    s: 20
+}
+let obj_2={
+    f: 24,
+    s: 76
+}
+console.log(obj_1-obj_2);
+console.log(obj_1+obj_2);
+console.log(obj_1*obj_2);
+console.log(obj_1/obj_2);
+alert(obj_1)
+alert(obj_2)
+*/
+
+
 //   NUMBERS
 /*
 let a=1000000000
@@ -1069,7 +1103,120 @@ console.log(readNumber());
 console.log(Math.random()*10);
 
 console.log(Math.trunc(Math.random()*10));
+
+let population=8e9
+console.log(population);
+let a=7.3e9;
+console.log(a);
+console.log(a+population);
+
+console.log(7e500)
+
+let mcs=1e-6
+console.log(mcs);
+
+let num=13
+console.log(num.toString(16));
+console.log(num.toString(2));
+console.log(num.toString(8));
+console.log(num.toString(36));
+
+let num=2.1
+console.log(Math.round(num));
+console.log(Math.ceil(num));
+console.log(Math.floor(num));
+console.log(Math.trunc(num));
+
+let fNum=31.2345
+console.log(+fNum.toFixed(2));
+console.log(fNum.toFixed(10));
+
+let sum=0.1+0.2;
+console.log(sum.toFixed(2));
+
+let num=21
+let str='bla'
+let empt=''
+let inf=Infinity
+console.log(isNaN(str));
+console.log(isFinite(inf));
+console.log(isFinite(num));
+console.log(isFinite(empt));
+console.log(isFinite(str));
+
+let num=21
+let str='bla'
+let empt=''
+let inf=Infinity
+console.log(Number.isFinite(empt));
+console.log(Number.isFinite(num));
+console.log(Number.isFinite(str));
+console.log(Number.isFinite(inf));
+console.log(Number.isNaN(str));
+
+function toBinary(n){
+    console.log(n.toString(10));
+}
+toBinary(0o101110)
+
+function toAll(n){
+    console.log(n.toString(2));
+    console.log(n.toString(16));
+    console.log(n.toString(8));
+}
+toAll(13)
+
+function randomNum(){
+    console.log(Math.round(Math.random()*1000));
+}
+randomNum()
+
+function zerosPart(n,limit){
+    console.log(n.toFixed(limit));
+}
+zerosPart(31.544646767,2)
+
+let a=NaN
+let b=NaN
+console.log(Object.is(a,b)); // === but with NaN and 0, -0
+
+let usd='10.25$'
+console.log(parseInt(usd));
+console.log(parseFloat(usd));
+
+let color='0xff'
+console.log(parseInt(color, 16));
+let bi=01011
+console.log(parseInt(bi,10));
+
+console.log(Math.pow(2,3));
+
+function findMax(arr){
+    console.log(Math.max.apply(null, arr));
+}
+findMax([-1,0,2,4,5,76,9,31])
+
+function findMin(arr){
+    console.log(Math.min.apply(null, arr));
+}
+findMin([-1,0,2,4,5,76,9,31])
 */
+function naturalNum(n){
+    if(n>0 && Math.floor(n)===n){   //let num=3;
+                                    //let num=3.2;
+                                    //console.log(Math.floor(num)===num);
+        console.log(true);
+    } else{
+        console.log(false);
+    }
+}
+naturalNum(3.2)
+naturalNum(3.2324)
+naturalNum(-1)
+naturalNum(3)
+
+
+
 
 
 //   STRINGS
