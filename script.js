@@ -1200,7 +1200,7 @@ function findMin(arr){
     console.log(Math.min.apply(null, arr));
 }
 findMin([-1,0,2,4,5,76,9,31])
-*/
+
 function naturalNum(n){
     if(n>0 && Math.floor(n)===n){   //let num=3;
                                     //let num=3.2;
@@ -1214,8 +1214,7 @@ naturalNum(3.2)
 naturalNum(3.2324)
 naturalNum(-1)
 naturalNum(3)
-
-
+*/
 
 
 
@@ -1328,7 +1327,180 @@ function ends(str, startValue) {
     return str.endsWith(`${startValue}`)
 }
 console.log(ends("aboba","a"));
+
+console.log('Here is a \\');
+
+let str='blablalblalbal'
+console.log(str.length);
+console.log(str[0]);
+console.log(str.at(2));
+
+let str='blablalblalbal'
+console.log(str[str.length-1]);
+console.log(str.at(-1));
+
+let str='blablalblalbal'
+console.log(str.toUpperCase());
+console.log(str[0].toUpperCase()+str);
+
+let str='Widget with id and ge'
+console.log(str.indexOf('id'));
+console.log(str.indexOf('id', 2));
+console.log(str.indexOf('Id'));
+console.log(str.indexOf('ge'));
+console.log(str.indexOf('ge', 4));
+
+let str='Widget with id and ge'
+console.log(str.lastIndexOf('ge'));
+console.log(str.lastIndexOf('ge', 18));
+console.log(str.lastIndexOf('id'));
+console.log(str.lastIndexOf('id', 11));
+
+let str='Widget with id and ge'
+console.log(str.includes('id'));
+console.log(str.includes('ID'));
+console.log(str.includes('id', 2));
+
+let str='Widget with id and ge'
+console.log(str.startsWith('WI'));
+console.log(str.startsWith('Wi'));
+console.log(str.endsWith('ge'));
+
+let str='Widget with id and ge'
+console.log(str.slice(0,6));
+console.log(str.substr(0,6));
+console.log(str.substring(0,6));
+
+console.log('a'>'A');
+console.log('a'.codePointAt(0));
+console.log('A'.codePointAt(0));
+
+console.log(String.fromCharCode(65));
+console.log(String.fromCharCode(97));
+
+let str='agdjsfdjA'
+console.log(str.codePointAt(0));
+
+let str1='Aboba'
+let str2='aboba'
+console.log(str1>str2);
+console.log(str1<str2);
+console.log(str1===str2);
+console.log(str1==str2);
+
+let str='gdopfgodog'
+console.log(str.repeat(10));
+
+let str='Рузкы';
+let str2='England'
+console.log(str.localeCompare(str2));
+
+let str='Hello World!'
+console.log(str.length);
+
+let str1='dodo';
+let str2='pizza';
+console.log(str1.concat(str2));
+
+let str='dgddjgfj'
+console.log(str.toUpperCase());
+console.log(str.toLocaleLowerCase());
+
+let str='Hello World!'
+console.log(str.slice(0,5));
+
+let str='Hello World!'
+console.log(str.indexOf('d'));
+
+let str='Hello World!'
+console.log(str.includes('World'));
+
+let str='Hello World!'
+console.log(str.split('World!').join('Peoples.'));
+function replaceThings(str, find, replace){
+    console.log(str.split(find).join(replace)); 
+}
+let a='So i am a human.'
+replaceThings(a, 'a human.', 'an AI.')
+
+let str='Hello World!'
+console.log(str.split(' '));
+console.log(str.split(' ').join(', '));
+
+let str='Hello World!'
+console.log(str.startsWith('Hello'));
+console.log(str.endsWith('!'));
+
+let str='Hehe'
+console.log(str.repeat(10));
+
+function deleteSpace(str){
+    if(str[0]===' ' && str[str.length-1]===' '){
+        console.log(str.replace(' ', ''));
+    } else{
+        console.log("It's normal");
+    }
+}
+deleteSpace(' withspace ')
+deleteSpace('withoutspace');
+
+function cutStr(str){
+    if(str.length>=10){
+        console.log(str.substr(0, 10)+ '...');
+    } else{
+        console.log("It's fine.");
+    }
+}
+cutStr('hereismorethantencharacters')
+cutStr('hereisnot')
+
+function returnLength(str){
+    console.log(str.length);
+}
+returnLength('srfdggfgf')
+
+function capitalizeFirstLEtter(str){
+    let capitilized=str[0].toUpperCase();
+    console.log(capitilized+str.substr(1));
+}
+capitalizeFirstLEtter('donkeymonkey')
+
+function splitToArr(str){
+    console.log(str.split(''));
+}
+splitToArr('splittoarrayofsimbols')
 */
+function onlyNums(str){
+    if(str.includes(Number) && !str.includes(String)){
+        console.log(true);
+    } else{
+        console.log(false);
+    }
+}
+onlyNums('')
+
+function reverseStr(str){
+    for (let index = 0; index < str.length; index++) {
+       console.log(str.at(-index));
+    }
+}
+reverseStr('sausage')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //   ARRAYS
