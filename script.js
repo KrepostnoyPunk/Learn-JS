@@ -1541,22 +1541,6 @@ function annagramm(str1, str2){
 annagramm('abiba', 'aboba')
 annagramm('abiba', 'abiba')
 */
-function deleteChar(str){
-    if(str.includes('xxx')){
-        str.replace('xxx', '$$$')
-    }
-}
-deleteChar('xxx porn virt')
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1649,7 +1633,73 @@ console.log(music);
 
 music.unshift('reggae','metal')
 console.log(music);
+
+let arr=['Apple', 'Orange', 'Banana']
+console.log(arr[0]);
+
+let arr=['Apple', 'Orange', 'Banana']
+arr[2]='Watermelon'
+console.log(arr[2]);
+
+let arr=['Apple', 'Orange', 'Banana']
+arr[3]='Pineaple'
+console.log(arr);
+console.log(arr.length);
+
+let arr=['Apple', {name: 'Stepan', age: 20}, true, false, function hello(){return 'Hello pips.'}]
+console.log(arr[1].name);
+console.log(arr[1].age);
+console.log(arr[4]());
+console.log(arr[2]);
+console.log(arr[3]);
+console.log(arr.at(-1)());
+
+let arr=['Apple', 'Orange', 'Banana']
+arr.push('Popalopa')
+console.log(arr);
+
+let arr=['Apple', 'Orange', 'Banana']
+arr.shift()
+console.log(arr);
+
+let arr=['Apple', 'Orange', 'Banana']
+let deleted=arr.pop()
+console.log(arr);
+console.log(deleted);
+
+let arr=['Apple', 'Orange', 'Banana']
+let deleted=arr.shift()
+console.log(arr);
+console.log(deleted);
+
+let arr=['Apple', 'Orange', 'Banana']
+arr.push('Watermelon', 'Melon', 'Avocado', 'Coffee')
+console.log(arr);
+
+let arr=['Apple', 'Orange', 'Banana']
+arr.unshift('Watermelon', 'Melon', 'Avocado', 'Coffee')
+console.log(arr);
+
+let arr=['Apple', 'Orange', 'Banana']
+for (let index = 0; index < arr.length; index++) {
+    console.log(arr[index]);
+}
+
+let arr=['Apple', 'Orange', 'Banana']
+for (const ar of arr) {
+    console.log(ar);
+}
+
+let matrix=[
+    [1,2,3],
+    [4,5,6]
+]
+console.log(matrix[0][1]);
+
+let arr=[1,2,3,4,5,6,7,8,9,10]
+console.log(arr.length);
 */
+
 
 
 //   ARRAY METHODS
@@ -1759,7 +1809,48 @@ console.log(camelize('background-color'));
 for(let char of 'test') {
     console.log(char);
 }
+
+let arr=['Apple', 'Orange', 'Banana','Watermelon', 'Melon', 'Avocado', 'Coffee']
+let deleted=arr.splice(0, 3, 'Milk', 'Sausage', 'Beans')
+console.log(deleted);
+console.log(arr);
+
+let arr=['Apple', 'Orange', 'Banana','Watermelon', 'Melon', 'Avocado', 'Coffee']
+arr.splice(2, 0, 'Egg')
+console.log(arr);
 */
+let arr=['Apple', 'Orange', 'Banana','Watermelon', 'Melon', 'Avocado', 'Coffee']
+console.log(arr);
+let arr2=arr.slice()
+console.log(arr2);
+console.log(arr==arr2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
