@@ -1469,27 +1469,84 @@ function splitToArr(str){
     console.log(str.split(''));
 }
 splitToArr('splittoarrayofsimbols')
-*/
-function onlyNums(str){
-    if(str.includes(Number) && !str.includes(String)){
-        console.log(true);
-    } else{
-        console.log(false);
-    }
-}
-onlyNums('')
+
+let str=' gfgfgfgfg '
+console.log(str);
+console.log(str.trim());
 
 function reverseStr(str){
-    for (let index = 0; index < str.length; index++) {
-       console.log(str.at(-index));
-    }
+    console.log(str.split("").reverse().join("")); 
 }
 reverseStr('sausage')
 
+function onlyStrings(str){
+    if(Number(str)){
+        console.log(false);
+    } else{
+        console.log(true);
+    }
+}
+onlyStrings('suction')
+onlyStrings('32456')
 
+function onlyNums(str){
+    if(Number(str)){
+        console.log(true);
+    } else {
+        console.log(false);
+    }
+}
+onlyNums('12345')
+onlyNums('suction')
 
+function concatStrings(str1,str2){
+    console.log(str1+" ".concat(str2));
+}
+concatStrings('I AM', 'ALIVE')
 
+function toLower(str){
+    console.log(str.toLowerCase());
+}
+toLower('DFJDJFDJF')
 
+function toUpper(str){
+    console.log(str.toUpperCase());
+}
+toUpper('jfjfjfjfjf')
+
+function lengthCompare(str1,str2){
+    if(str1.length>str2.length){
+        console.log(`${str1} is LONGER`);
+    } else if(str1.length<str2.length){
+        console.log(`${str2} is LONGER`);
+    } else if(str1.length==str2.length){
+        console.log(`${str1} and ${str2} are EQUAL`);
+    }
+}
+lengthCompare('aboba', 'abiba')
+lengthCompare('jdjskskd','jio')
+
+function deletePunctuation(str){
+    console.log(str.split(', ').join(' '));
+}
+deletePunctuation('So, i am, adding, punctuation.')
+
+function annagramm(str1, str2){
+    if(str1===str2){
+        console.log(true);
+    } else {
+        console.log(false);
+    }
+}
+annagramm('abiba', 'aboba')
+annagramm('abiba', 'abiba')
+*/
+function deleteChar(str){
+    if(str.includes('xxx')){
+        str.replace('xxx', '$$$')
+    }
+}
+deleteChar('xxx porn virt')
 
 
 
