@@ -1818,38 +1818,184 @@ console.log(arr);
 let arr=['Apple', 'Orange', 'Banana','Watermelon', 'Melon', 'Avocado', 'Coffee']
 arr.splice(2, 0, 'Egg')
 console.log(arr);
-*/
+
 let arr=['Apple', 'Orange', 'Banana','Watermelon', 'Melon', 'Avocado', 'Coffee']
 console.log(arr);
 let arr2=arr.slice()
 console.log(arr2);
 console.log(arr==arr2);
 
+let arr=['Apple', 'Orange', 'Banana','Watermelon', 'Melon', 'Avocado', 'Coffee']
+let arr2=['Sausage','Egg','Pie','Cream']
+let arr3=arr.concat(arr2)
+console.log(arr3);
+
+let arr=['Apple', 'Orange', 'Banana','Watermelon', 'Melon', 'Avocado', 'Coffee']
+arr.forEach(alert)
+
+let arr=['Apple', 'Orange', 'Banana','Watermelon', 'Melon', 'Avocado', 'Coffee']
+arr.forEach((item,i,array)=>{
+    console.log(`${item} on position ${i} in ${array}`);
+})
+
+let arr=['Apple', 'Orange', 'Banana','Watermelon', 'Melon', 'Avocado', 'Coffee']
+arr.forEach((item)=>{
+    console.log(item);
+})
+
+let arr=['Apple', 'Orange', 'Banana','Watermelon', 'Melon', 'Avocado', 'Coffee']
+arr.forEach(function (item, index){
+    console.log(item, index);
+})
+
+let arr=['Apple', 'Orange', 'Banana','Watermelon', 'Melon', 'Avocado', 'Coffee']
+console.log(arr.indexOf('Banana'));
+console.log(arr.includes('Apple'));
+
+let arr=[
+    {age: 27, name: 'Andrew'},
+    {age: 20, name: 'Stepan'},
+    {age: 999, name: 'SomeDude'},
+]
+let user=arr.find(item=>item.age==20)
+console.log(user);
+console.log(user.age);
+console.log(user.name);
+
+let arr=[
+    {age: 27, name: 'Andrew'},
+    {age: 20, name: 'Stepan'},
+    {age: 999, name: 'SomeDude'},
+    {age: 27, name: 'Andrew'},
+]
+let user=arr.findIndex(item=>item.age==20)
+console.log(user);
+console.log(user.age);
+console.log(user.name);
+
+let arr=[
+    {age: 27, name: 'Andrew'},
+    {age: 20, name: 'Stepan'},
+    {age: 999, name: 'SomeDude'},
+    {age: 27, name: 'Andrew'},
+]
+let user1=arr.findIndex(item=>item.age===27)
+console.log(user1);
+let user2=arr.findLastIndex(item=>item.age===27)
+console.log(user2);
+
+let arr=[
+    {age: 27, name: 'Andrew'},
+    {age: 20, name: 'Stepan'},
+    {age: 999, name: 'SomeDude'},
+]
+let yongerUsers=arr.filter(item=>item.age<999)
+console.log(yongerUsers);
+
+let arr=['Apple', 'Orange', 'Banana','Watermelon', 'Melon', 'Avocado', 'Coffee'];
+let mapped=arr.map(item=>item.length);
+console.log(mapped);
+
+let arr=['Apple', 'Orange', 'Banana','Watermelon', 'Melon', 'Avocado', 'Coffee'];
+let mapped=arr.map(item=>item.toLowerCase());
+console.log(mapped);
+
+function compare(a,b){
+    if(a>b){
+        return 1
+    } else if(a<b){
+        return -1
+    } else if(a==b){
+        return 0
+    }
+}
+let arr=[1,2,4,6,7,8,45,67,32,13]
+console.log(arr.sort(compare));
+let strArr=['gob', 'dog', 'Sod']
+console.log(strArr.sort(compare));
+
+let arr=[1,2,4,6,7,8,45,67,32,13]
+console.log(arr.reverse());
+
+let names = 'Вася, Петя, Маша';
+console.log(names.split(', '));
+
+let names = 'Вася, Петя, Маша';
+let arr=names.split(', ')
+for (const name of arr) {
+    console.log(`${name} will get a message`);
+}
+
+let names = 'Вася, Петя, Маша';
+console.log(names.split(', ', 1));
+
+let arr=['Alex', 'Jack', 'Ken']
+console.log(arr.join(', '));
+
+let arr=[]
+let fakeArr={}
+console.log(Array.isArray(arr));
+console.log(Array.isArray(fakeArr));
+
+let arr1=['first']
+let arr2=['second']
+concattedArr=arr1.concat(arr2)
+console.log(concattedArr);
+
+let arr=[1,2,3,4,5,6,7,8,9,10]
+let sum=0
+for (let item of arr) {
+    sum+=item
+}
+console.log(sum);
+
+let arr=[1,2,3,4,5,6,7,8,9,10]
+if(arr[3]==4){
+    console.log(true);
+}
+
+let arr=['Alex', 'Jack', 'Ken']
+if(arr[1]=='Jack'){
+    console.log('Hi, bud!');
+}
+
+let arr=['Alex', 'Jack', 'Ken']
+console.log(arr.reverse());
+
+let arr=[23,1,4,6,7,8,2,3,5]
+function sortToBigger(a,b){
+    if(a>b) return 1;
+    if(a<b) return -1;
+    if(a==b) return 0
+}
+console.log(arr.sort(sortToBigger));
+
+// let arr=['first', 'second', 'third', 'first']
+// arr.forEach(item => {
+//     if(item.includes('first')){
+//         item=0;
+//     }
+//     console.log(item);
+// });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let arr=[1,2,3,4,5,6,7,8,9,10]
+let evenArr=[]
+arr.forEach(element => {
+    if(element%2===0){
+        evenArr.push(element)
+    }
+});
+console.log(evenArr);
+*/
+let objArr=[
+    {id: 1, age: 10},
+    {id: 2, age: 20},
+    {id: 3, age: 30},
+    {id: 4, age: 40},
+]
+let finded=objArr.find(item=>item.id==2)
+console.log(finded);
 
 
 
