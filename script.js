@@ -1970,15 +1970,6 @@ function sortToBigger(a,b){
 }
 console.log(arr.sort(sortToBigger));
 
-// let arr=['first', 'second', 'third', 'first']
-// arr.forEach(item => {
-//     if(item.includes('first')){
-//         item=0;
-//     }
-//     console.log(item);
-// });
-
-
 let arr=[1,2,3,4,5,6,7,8,9,10]
 let evenArr=[]
 arr.forEach(element => {
@@ -1987,7 +1978,7 @@ arr.forEach(element => {
     }
 });
 console.log(evenArr);
-*/
+
 let objArr=[
     {id: 1, age: 10},
     {id: 2, age: 20},
@@ -1996,6 +1987,82 @@ let objArr=[
 ]
 let finded=objArr.find(item=>item.id==2)
 console.log(finded);
+
+let objArr=[
+    {id: 1, age: 10},
+    {id: 2, age: 20},
+    {id: 3, age: 30},
+    {id: 4, age: 40},
+]
+let sortedArr=[];
+function ageSort(item){
+    if(item.age<40){
+        sortedArr.push(item)
+        return sortedArr
+    }
+}
+objArr.forEach(ageSort)
+console.log(sortedArr);
+
+let objArr=[
+    {id: 1, capital: 10},
+    {id: 2, capital: 20},
+    {id: 3, capital: 30},
+    {id: 4, capital: 40},
+]
+let sum=0;
+function sumObjQualities(item){
+    sum+=item.capital
+}
+objArr.forEach(sumObjQualities)
+console.log(sum);
+
+let obj=[
+    {id:3, caps: 350},
+    {id:5, caps: 30},
+    {id:2, caps: 50},
+    {id:1, caps: 35},
+    {id:6, caps: 120},
+    {id:4, caps: 10},
+]
+function sortToBigger(a,b){
+    if(a.id>b.id){
+        return 1
+    } else if(a.id<b.id){
+        return -1
+    } else{
+        return 0
+    }
+}
+let sorted=obj.sort(sortToBigger)
+console.log(sorted);
+
+let obj=[
+    {id:3, caps: 350},
+    {id:5, caps: 30},
+    {id:2, caps: 50},
+    {id:1, caps: 35},
+    {id:6, caps: 120},
+    {id:4, caps: 10},
+]
+let mapped=[]
+function makeObjQualToArr(item){
+     mapped.push(item.caps)
+     return mapped
+}
+obj.map(makeObjQualToArr)
+console.log(mapped);
+*/
+let arr=[1,2,3,4,5,6,7,8,9,10]
+arr.forEach(()=>{
+    arr*=2
+})
+console.log(Number(arr));
+
+
+
+
+
 
 
 
