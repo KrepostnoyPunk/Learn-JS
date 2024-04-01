@@ -2052,13 +2052,63 @@ function makeObjQualToArr(item){
 }
 obj.map(makeObjQualToArr)
 console.log(mapped);
-*/
-let arr=[1,2,3,4,5,6,7,8,9,10]
-arr.forEach(()=>{
-    arr*=2
-})
-console.log(Number(arr));
 
+let obj=[
+    {id:3, caps: 350},
+    {id:5, caps: 30},
+    {id:2, caps: 50},
+    {id:1, caps: 35},
+    {id:6, caps: 120},
+    {id:4, caps: 10},
+]
+obj=obj.map(item=>item.caps)
+console.log(obj);
+
+let nums=[0,1,2,3,4,5,6,7,8,9]
+nums=nums.map(item=>item*2)
+console.log(nums);
+
+let nums=[0,1,2,3,4,5,6,7,8,9]
+let subArr=nums.slice(0,3)
+console.log(subArr);
+
+let nums=[0,1,2,3,4,5,6,7,8,9]
+nums.forEach((item)=>{
+    console.log(item);
+})
+
+let nums=[0,1,2,3,4,5,6,7,8,9]
+nums.filter((item)=>{
+    if(item<=5){
+        console.log(item);
+    } else{
+        console.log('Hogher than 5');
+    }
+})
+
+let nums=[0,1,2,3,4,5,6,7,8,9]
+console.log(nums.find(item=>item==3));
+
+let obj=[
+    {id:3, caps: 350},
+    {id:5, caps: 30},
+    {id:2, caps: 50},
+    {id:1, caps: 35},
+    {id:6, caps: 120},
+    {id:4, caps: 10},
+]
+let richRich=obj.find(item=>item.caps==350)
+console.log(richRich);
+console.log(richRich.caps);
+console.log(richRich.id);
+*/
+let arr=[
+    [43, 23],
+    [21, 13],
+    [3, 5]
+]
+let finded=arr.find(item=>item==13)
+console.log(finded);
 
 
 
