@@ -2101,15 +2101,50 @@ let richRich=obj.find(item=>item.caps==350)
 console.log(richRich);
 console.log(richRich.caps);
 console.log(richRich.id);
-*/
+
 let arr=[
     [43, 23],
     [21, 13],
     [3, 5]
 ]
-let finded=arr.find(item=>item==13)
-console.log(finded);
+console.log(arr[1][0]);
 
+let arr=[
+    [43, 23],
+    [21, 13],
+    [3, 5]
+]
+let result=[].concat(arr[0], arr[1], arr[2])
+console.log(result);
+
+let arr=[
+    [43, 23],
+    [21, 13],
+    [3, 5]
+]
+let process=arr.forEach(item=>{
+    console.log(item[0]+item[1]);
+})
+
+let arr1=[1,2,3,4,5]
+let arr2=[6,7,8,9,10]
+let arr3=[]
+arr3[0]=arr1;
+arr3[1]=arr2
+console.log(arr3);
+
+let arr=[1,2,3,4,5]
+let sum=0
+arr.forEach(item=>{
+    sum+=item
+})
+console.log(sum);
+*/
+let arr=[12,13,12,2,2,3,4,5,6]
+let uniqueArr=arr.filter(function(item, pos){
+    return arr.indexOf(item)==pos;
+})
+console.log(uniqueArr);
 
 
 
