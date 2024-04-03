@@ -2139,16 +2139,184 @@ arr.forEach(item=>{
     sum+=item
 })
 console.log(sum);
-*/
+
 let arr=[12,13,12,2,2,3,4,5,6]
 let uniqueArr=arr.filter(function(item, pos){
     return arr.indexOf(item)==pos;
 })
 console.log(uniqueArr);
 
+let arr=['first','second','third','second']
+console.log(arr.indexOf('second'));
+console.log(arr.lastIndexOf('second'));
 
+let objArr=[
+    {id:3, caps: 350},
+    {id:5, caps: 30},
+    {id:2, caps: 50},
+    {id:1, caps: 35},
+    {id:6, caps: 120},
+    {id:4, caps: 10},
+]
+let owner=objArr.find(item=>item.id==1)
+console.log(owner);
 
+let objArr=[
+    {id:3, caps: 350},
+    {id:5, caps: 30},
+    {id:2, caps: 50},
+    {id:1, caps: 35},
+    {id:6, caps: 120},
+    {id:4, caps: 10},
+    {id:1, caps: 35}
+]
+let first=objArr.findIndex(item=>item.id==1)
+let secondFirst=objArr.findLastIndex(item=>item.id==1)
+console.log(first);
+console.log(secondFirst);
 
+let objArr=[
+    {id:3, caps: 350},
+    {id:5, caps: 30},
+    {id:2, caps: 50},
+    {id:1, caps: 35},
+    {id:6, caps: 120},
+    {id:4, caps: 10},
+    {id:1, caps: 35}
+]
+let finded=objArr.find(item=>item.caps<350)
+console.log(finded);
+let filtered=objArr.filter(item=>item.caps<350)
+console.log(filtered);
+
+let objArr=[
+    {id:3, caps: 350},
+    {id:5, caps: 30},
+    {id:2, caps: 50},
+    {id:1, caps: 35},
+    {id:6, caps: 120},
+    {id:4, caps: 10},
+    {id:1, caps: 35}
+]
+let leader=objArr.find(item=>item.caps==350)
+console.log(leader);
+
+let objArr=[
+    {id:3, caps: 350},
+    {id:5, caps: 30},
+    {id:2, caps: 50},
+    {id:1, caps: 35},
+    {id:6, caps: 120},
+    {id:4, caps: 10},
+    {id:1, caps: 40}
+]
+let filtered=objArr.filter(item=>item.caps<100)
+console.log(filtered);
+
+let arr=['pUnIshEr111','usER01','GomBAboB71']
+let mapped=arr.map(item=>item.toLocaleLowerCase())
+console.log(mapped);
+
+let arr=['pUnIshEr111','usER01','gomBAboB71','jojo','jj']
+let mapped=arr.map(item=>item[0].toUpperCase()+item.slice(1).toLowerCase())
+console.log(mapped);
+console.log(mapped.join(', '));
+
+let arr=['pUnIshEr111','usER01','gomBAboB71','jojo','jj','aboba','bob','ciri']
+arr.sort()
+console.log(arr);
+
+let nums=[1,4,5,2,3,6,8,7,9]
+nums.sort()
+console.log(nums);
+
+let nums=[1,2,15]
+nums.sort()
+console.log(nums);
+function compare(a,b){
+    if(a>b) return 1;
+    if(a==b) return 0;
+    if(b>a) return -1
+}
+nums.sort(compare)
+console.log(nums);
+
+let nums=[1,2,15]
+nums.reverse()
+console.log(nums);
+
+let str='Pete, Miles, Gwen';
+let splittedToArr=str.split(', ')
+console.log(splittedToArr);
+let joined=splittedToArr.join(', ')
+console.log(joined);
+
+let str='Pete, Miles, Gwen';
+let splittedToArr=str.split(',', 1)
+console.log(splittedToArr);
+
+console.log(Array.isArray({}));
+console.log(Array.isArray([]));
+
+let nums=[0,1,2,3,4, 5, 14, 9,-13]
+console.log(nums.indexOf(-13));
+
+let nums=[0,1,2,3,4, 5, 14, 9,-13]
+let limit=-13;
+nums=nums.filter(num=>num!==limit)
+console.log(nums);
+
+let nums=[0,1,2,3,4, 5, 14, 9,-13]
+nums.forEach(item=>{
+    if(item%3===0){
+        console.log( item);
+    }
+})
+
+let arr=['name1','nade2','nafe3']
+arr.forEach(item=>{
+    if(item.includes('am')){
+        console.log(item);
+    }
+})
+
+let objArr=[
+    {id:3, caps: 350},
+    {id:5, caps: 30},
+    {id:2, caps: 50},
+    {id:1, caps: 35},
+    {id:6, caps: 120},
+    {id:4, caps: 10},
+    {id:1, caps: 40}
+]
+let limitValue=30;
+objArr=objArr.filter(value=>value.caps>limitValue)
+console.log(objArr);
+
+let arr=['1','2','3','4','5'];
+let mapped=arr.map(item=>Number(item))
+console.log(mapped);
+
+let nums=[1,2,3,4,5]
+let mapped=nums.map(item=>item.toString())
+console.log(mapped);
+
+let nums=[1,2,3,4,5]
+let numsX2=nums.map(item=>item*item)
+console.log(numsX2);
+*/
+let objArr=[
+    {id:3, caps: 350},
+    {id:5, caps: 30},
+    {id:2, caps: 50},
+    {id:1, caps: 35},
+    {id:6, caps: 120},
+    {id:4, caps: 10},
+]
+let obj={}
+objArr.map(item=>obj(item.id.caps))
+// objArr.map(item=>obj.push(item[0], item[1], item[2],item[3],item[4]))
+console.log(obj);
 
 
 
@@ -2180,7 +2348,7 @@ console.log(c);
 
 let test={
     name: "i'm",
-    age: 20
+    age: 20;
 }
 console.log(test);
 let map=new Map(Object.entries(test))
