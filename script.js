@@ -2304,19 +2304,79 @@ console.log(mapped);
 let nums=[1,2,3,4,5]
 let numsX2=nums.map(item=>item*item)
 console.log(numsX2);
-*/
+
 let objArr=[
-    {id:3, caps: 350},
-    {id:5, caps: 30},
-    {id:2, caps: 50},
-    {id:1, caps: 35},
-    {id:6, caps: 120},
-    {id:4, caps: 10},
+    {id:3, num: 350},
+    {so:5, da: 30},
+    {cvbc:2, gn: 50},
+    {cv:1, jg: 35},
+    {op:6, er: 120},
+    {kl:4, qw: 10},
 ]
-let obj={}
-objArr.map(item=>obj(item.id.caps))
-// objArr.map(item=>obj.push(item[0], item[1], item[2],item[3],item[4]))
-console.log(obj);
+let mergedObj={};
+for(let item of objArr){
+    Object.assign(mergedObj, item)
+}
+console.log(mergedObj);
+
+let arr=[1,2,3,4,5,6,7,8,9,10]
+function sumArr(arr){
+    let sum=0;
+    arr.forEach(item => {
+        sum+=item;
+    });
+    console.log(sum);
+}
+sumArr(arr)
+
+let arr=['i','am','fugin','tired']
+function concatArrEls(arr){
+    let concated=arr.join(' ')
+    console.log(concated);
+}
+concatArrEls(arr)
+
+let arr=[1,2,3,4,5,6,7,8,9,10]
+function averageOfNums(arr){
+    let startingValue=0;
+    arr.forEach(item => {
+        startingValue+=item;
+    });
+    let result=startingValue/arr.length
+    console.log(result);
+}
+averageOfNums(arr)
+*/
+let arr=['i','am','fugin','tired'];
+function longestStr(a,b){
+    let maxStrLength=0;
+    if(a.length>b.length && !b.length>a.length) {
+    maxStrLength+=a.length
+   }; 
+    if (b.length>a.length && !a.length>b.length){
+    maxStrLength+=b.length
+    };
+    console.log(maxStrLength);
+}
+arr.sort(longestStr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
