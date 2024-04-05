@@ -2346,37 +2346,132 @@ function averageOfNums(arr){
     console.log(result);
 }
 averageOfNums(arr)
-*/
+
 let arr=['i','am','fugin','tired'];
-function longestStr(a,b){
+function longestStr(array){
     let maxStrLength=0;
-    if(a.length>b.length && !b.length>a.length) {
-    maxStrLength+=a.length
-   }; 
-    if (b.length>a.length && !a.length>b.length){
-    maxStrLength+=b.length
-    };
-    console.log(maxStrLength);
+    for (let index = 0; index < array.length; index++) {
+       if(array[index].length>maxStrLength){
+        maxStrLength=array[index].length;
+       }
+    }
+    return maxStrLength
 }
-arr.sort(longestStr)
+console.log(longestStr(arr));
 
+let arr=[34,13,45,1,98,3,-21]
+function smallestNum(array){
+    let smallest=0;
+    for (let index = 0; index < array.length; index++) {
+        if(array[index]<smallest){
+        smallest=array[index]
+       }
+    }
+    return smallest
+}
+console.log(smallestNum(arr));
 
+let arr=['i','am','still','fighting','and','i','workout','good','today'];
+function takeFirstChar(array){
+    let charArr=[];
+    for (let index = 0; index < array.length; index++) {
+        charArr.push(array[index][0])
+    }
+    return charArr
+}
+console.log(takeFirstChar(arr));
 
+let arr=[1,2,3,4,5,6,7,8,9,10]
+function multiplyByTwo(array){
+    let multiplied=[];
+    array.forEach(item => {
+        multiplied.push(item*2)
+    });
+    return multiplied
+}
+console.log(multiplyByTwo(arr));
 
+let arr=['i','am','still','fighting','and','i','workout','good','today'];
+function toUpper(array){
+    let uppered=[];
+    array.forEach(element => {
+        uppered.push(element.toUpperCase())
+    });
+    return uppered
+}
+console.log(toUpper(arr));
 
+let arr=[
+    [1,2,3],
+    [4,5,6]
+]
+function concatSubArrs(array){
+    let concatedArr=[];
+    for (let index = 0; index < array[0].length; index++) {
+        for (let i = 0; i < array.length; i++) {
+            concatedArr.push(array[i][index])
+            concatedArr.sort(function compare(a,b){
+                if(a>b) return 1;
+                if(a==b) return 0;
+                if(b>a) return -1;
+            })
+        }
+    }
+    return concatedArr
+}
+console.log(concatSubArrs(arr));
 
+let arr=[1,2,3,4,5,6,7,8,9,10]
+function onlyOdd(array){
+    array.forEach(element => {
+        if(element%2!==0){
+            console.log(element);
+        }
+    });
+}
+console.log(onlyOdd(arr));
 
+let arr=['i','am','still','fighting','and','i','workout','good','today'];
+function greaterThan(array, limit){
+    array.forEach(element => {
+        if(element.length>limit){
+            console.log(element);
+        }
+    });
+}
+greaterThan(arr, 5)
 
+let arr=[90,11,13,54,21,43,5,67,13]
+function firstOccurance(array, given){
+    let result=array.indexOf(given)
+    return result
+}
+console.log(firstOccurance(arr, 13));
 
+let strArr=['asos','sasus','sapog','asus']
+console.log(firstOccurance(strArr, 'asus'));
 
+let arr=[90,11,13,54,21,43,5,67,13]
+let strArr=['asos','sasus','sapog','asus','asos']
+function lastOccurance(array, given){
+    let result=array.lastIndexOf(given);
+    return result
+}
+console.log(lastOccurance(arr, 13));
+console.log(lastOccurance(strArr, 'asos'));
 
-
-
-
-
-
-
-
+let arr=[90,11,13,54,21,43,5,67,13]
+function onlyEvens(array){
+    let even=[]
+    array.forEach(element => {
+        if(element%2===0){
+            even.push(element)
+        }
+    });
+    return even
+}
+console.log(onlyEvens(arr));
+*/
 
 
 
