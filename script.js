@@ -2543,7 +2543,51 @@ let salaries = {
     "marcus": 2850
   };
 console.log(sumSalaries(salaries));
+
+let map=new Map();
+map.set(1,'1')
+map.set(true,'2')
+map.set(NaN,'3')
+console.log(map.get(1));
+console.log(map.get(true));
+console.log(map.get(NaN));
+console.log(map.size);
+console.log(map.has(NaN));
+map.delete(NaN)
+console.log(map.has(NaN));
+
+let obj={name: 'Zakhar'};
+let map=new Map();
+map.set(obj, 'i dunno what to write i wanna sleep')
+console.log(map.get(obj));
+
+let map=new Map()
+map.set(1, 'first')
+    .set(2, 'second')
+    .set(Infinity, 'infinity')
+console.log(map.get(1));
+console.log(map.get(2));
+console.log(map.get(Infinity));
+
+let map=new Map()
+map.set(1, 'first')
+    .set(2, 'second')
+    .set(Infinity, 'infinity')
+console.log(map.keys());
+console.log(map.values());
+console.log(map.entries());
 */
+let obj={name: 'sex', age:21}
+let map=new Map(Object.entries(obj))
+console.log(map.get('name'));
+
+
+
+
+
+
+
+
 
 
 
