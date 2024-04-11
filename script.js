@@ -2544,42 +2544,146 @@ let salaries = {
   };
 console.log(sumSalaries(salaries));
 
-let map=new Map();
-map.set(1,'1')
-map.set(true,'2')
-map.set(NaN,'3')
-console.log(map.get(1));
-console.log(map.get(true));
+let map1=new Map();
+map1.set(1,"first")
+console.log(map1.get(1));
+
+let map2=new Map();
+map2.set(1, 'one');
+console.log(map2.size);
+console.log(map2.has(1));
+map2.delete(1)
+console.log(map2.size);
+console.log(map2.has(1));
+
+let legend={name: 'Nishida'}
+let map3=new Map();
+map3.set(legend, 11)
+console.log(map3.get(legend));
+
+let burgerRecipe=new Map([
+    ['onion', 20],
+    ['cheese', 150],
+    ['meatball', 500]
+])
+for (let key of burgerRecipe.keys()) {
+    console.log(key);
+}
+for(let value of burgerRecipe.values()){
+    console.log(value);
+}
+for(let pare of burgerRecipe.entries()){ // .entries() === for...of 
+    console.log(pare);
+}
+
+let burgerRecipe=new Map([
+    ['onion', 20],
+    ['cheese', 150],
+    ['meatball', 500]
+])
+burgerRecipe.forEach((value,key)=>{
+    console.log(`${value} ${key}`);
+})
+
+let map=new Map([
+    [1, "first"],
+    ['2', 'second'],
+    [NaN, 'third']
+])
 console.log(map.get(NaN));
-console.log(map.size);
-console.log(map.has(NaN));
-map.delete(NaN)
-console.log(map.has(NaN));
 
-let obj={name: 'Zakhar'};
-let map=new Map();
-map.set(obj, 'i dunno what to write i wanna sleep')
-console.log(map.get(obj));
-
-let map=new Map()
-map.set(1, 'first')
-    .set(2, 'second')
-    .set(Infinity, 'infinity')
-console.log(map.get(1));
-console.log(map.get(2));
-console.log(map.get(Infinity));
-
-let map=new Map()
-map.set(1, 'first')
-    .set(2, 'second')
-    .set(Infinity, 'infinity')
-console.log(map.keys());
-console.log(map.values());
-console.log(map.entries());
-*/
-let obj={name: 'sex', age:21}
+let obj={
+    name: 'Sam',
+    age: 21
+}
 let map=new Map(Object.entries(obj))
+console.log(map);
 console.log(map.get('name'));
+
+let burgerRecipe=new Map([
+    ['onion', 20],
+    ['cheese', 150],
+    ['meatball', 500]
+])
+let recipeObj=Object.fromEntries(burgerRecipe)
+console.log(recipeObj);
+console.log(recipeObj.onion);
+
+let map=new Map();
+map.set(1,'first')
+    .set(2, 'second')
+let obj=Object.fromEntries(map)
+console.log(obj);
+
+let excerMap=new Map();
+excerMap.set(1, NaN)
+        .set(NaN, 32)
+
+let excerMap=new Map();
+excerMap.set(1, NaN)
+        .set(NaN, 32)
+console.log(excerMap.has(1));
+
+let excerMap=new Map();
+excerMap.set(1,'f')
+        .set(2,'s')
+for(let pare of excerMap.entries()){
+    console.log(pare);
+}
+
+let excerMap=new Map();
+excerMap.set(1,'f')
+        .set(2,'s')
+console.log(excerMap);
+excerMap.delete(2)
+console.log(excerMap);
+
+let excerMap=new Map();
+excerMap.set(1,'f')
+        .set(2,'s')
+console.log(excerMap.size);
+excerMap.clear()
+console.log(excerMap.size);
+
+let excerMap=new Map();
+excerMap.set(1,'f')
+        .set(2,'s')
+let arrFromMap=[];
+for(let pare of excerMap){ // or Array.from(map.entries())
+    arrFromMap.push(pare)
+}
+console.log(arrFromMap);
+
+let arr=[
+    [1, 'f'],
+    [NaN, 's'],
+    [true, 't']
+]
+let map=new Map(arr)
+console.log(map);
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2597,7 +2701,6 @@ let arr=['Rockstar','Sucker']
 let [first, last]=arr
 console.log(first);
 console.log(last);
-
 let [a,,b]=[1,2,3,4,5]
 console.log(b);
 
