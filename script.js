@@ -2661,9 +2661,119 @@ let arr=[
 ]
 let map=new Map(arr)
 console.log(map);
+
+let map=new Map([
+    ['f', 1],
+    ['s', NaN],
+    ['t', true]
+])
+console.log(map);
+let mapToObj=Object.fromEntries(map)
+console.log(mapToObj.f);
+
+let map1=new Map([
+    ['f', 1],
+    ['s', NaN],
+    ['t', true]
+])
+let map2=new Map([
+    ['g', 3],
+    ['d', 'NaN'],
+    ['c', false]
+])
+map2.forEach((key, value)=>{
+    map1.set(key,value)
+})
+console.log(map1);
+
+let set=new Set();
+let uniqueGuest1={name: 'Alfred'}
+let uniqueGuest2={name: 'Michael'}
+let uniqueGuest3={name: 'Sam'}
+set.add(uniqueGuest1)
+set.add(uniqueGuest2)
+set.add(uniqueGuest3)
+console.log(set.size);
+set.add(uniqueGuest1)
+set.add(uniqueGuest2)
+set.add(uniqueGuest3)
+console.log(set.size);
+for(let guest of set){
+    console.log(guest.name);
+}
+
+let set=new Set(['apple','banana','coconut']);
+for(let fruit of set){
+    console.log(fruit);
+}
+set.forEach((value,valueAg, set)=>{
+    console.log(value);
+})
+
+let set=new Set(['apple','banana','coconut']);
+console.log(set.values());
+console.log(set.keys());
+console.log(set.entries());
+
+function uniqueArr(arr){
+    return Array.from(new Set(arr))
+}
+let names=['Alex','Alex','Sam','Alex','Goro']
+console.log(uniqueArr(names));
+
+let set=new Set()
+set.add('first')
+set.add('second')
+set.add('third')
+console.log(set.has('second'));
+for(let value of set){
+    console.log(value);
+}
+console.log(set.size);
+set.delete('second')
+console.log(set.size);
+set.clear()
+console.log(set.size);
+
+let set=new Set()
+set.add('first')
+set.add('second')
+set.add('third')
+console.log(Array.from(set));
+
+let set1=new Set()
+set1.add('first')
+set1.add('second')
+set1.add('third')
+let set2=new Set()
+set2.add('first')
+set2.add('second')
+set2.add('third')
+console.log(set1==set2);
+console.log(set1===set2);
+
+function unionOfSets(fS, sS){
+    let union=new Set(fS);
+    for(let value of sS){
+        union.add(value)
+    }
+    return union
+}
+let set1=new Set()
+set1.add('first')
+set1.add('second')
+set1.add('third')
+let set2=new Set()
+set2.add('fourth')
+set2.add('fifth')
+set2.add('sixth')
+console.log(unionOfSets(set1,set2));
 */
 
 
+
+//    WeakMap, WeakSet
+/**/
 
 
 
