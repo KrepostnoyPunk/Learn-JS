@@ -2773,27 +2773,26 @@ console.log(unionOfSets(set1,set2));
 
 
 //    WeakMap, WeakSet
-/**/
+/*
+let weak=new WeakMap()
+weak.set('str','test')
+console.log(weak.get*'str');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let obj={name: 'Paul'}
+let weak=new WeakMap()
+weak.set(obj, 'something')
+console.log(weak.get(obj));
+console.log(weak.has(obj));
+weak.delete(obj)
+console.log(weak.has(obj));
+console.log(weak.clear);
+*/
+let obj={name: 'Paul'}
+let wSet=new WeakSet();
+wSet.add(obj, 'somethingN2')
+console.log(wSet.has(obj));
+wSet.delete(obj)
+console.log(wSet.has(obj));
 
 
 
