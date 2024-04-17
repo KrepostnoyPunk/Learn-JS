@@ -2786,21 +2786,101 @@ console.log(weak.has(obj));
 weak.delete(obj)
 console.log(weak.has(obj));
 console.log(weak.clear);
-*/
+
 let obj={name: 'Paul'}
 let wSet=new WeakSet();
 wSet.add(obj, 'somethingN2')
 console.log(wSet.has(obj));
 wSet.delete(obj)
 console.log(wSet.has(obj));
+*/
 
 
+//   Object.keys, values, entries
+/*
+let obj={
+    name: 'A5$E34#6',
+    age: Infinity
+}
+console.log(Object.keys(obj));
+console.log(Object.values(obj));
+console.log(Object.entries(obj));
 
+let obj={
+    name: 'A5$E34#6',
+    age: Infinity
+}
+for(let value of Object.values(obj)){
+    console.log(value);
+}
 
+let obj={
+    name: 'A5$E34#6',
+    sex: 'NuUh',
+    country: 'Kazakhstan'
+}
+let transformedObj=Object.fromEntries(
+    Object.entries(obj).map(([key,value])=>[key, value.toLowerCase()])
+)
+console.log(transformedObj);
 
+let prices={
+    apple: 30,
+    banana: 60,
+    watermelon: 300
+}
+let inflation=Object.fromEntries(
+    Object.entries(prices).map(([key,value])=>[key,value*2])
+)
+console.log(inflation);
 
+let salaries = {
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
+  };
+function sumSalaries(obj){
+    let result=0;
+    for(let value of Object.values(obj)){
+        result+=value
+    }
+    return result
+}
+console.log(sumSalaries(salaries));
 
+let cash = {
+    John: 100,
+    Pete: 300,
+    Mary: 250
+};
+function propertiesCount(obj){
+    let count=Object.values(obj).length;
+    return count
+}
+console.log(propertiesCount(cash));
 
+let obj={
+    name: 'EasterEgg',
+    age: 999,
+    sex: 'Nuh'
+}
+let keys=Object.keys(obj)
+let values=Object.values(obj)
+let entries=Object.entries(obj)
+console.log(keys);
+console.log(values);
+console.log(entries);
+
+let obj={
+    name: 'EasterEgg',
+    age: 'SSSS',
+    sex: 'Nuh'
+}
+let transformed=Object.fromEntries(
+    Object.entries(obj).map(([key,value])=>[key, value.toUpperCase()])
+)
+console.log(transformed);
+*/
 
 
 
