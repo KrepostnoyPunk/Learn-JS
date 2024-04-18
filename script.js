@@ -2973,7 +2973,144 @@ function userData(obj) {
     return `${name}: ${age}`
 }
 console.log(userData(user));
+
+let arr=[1,2];
+let[f,s]=arr;
+console.log(f);
+console.log(s);
+
+let[fN,sN]='Stepan Sidorov'.split(' ')
+console.log(fN);
+console.log(sN);
+
+let[a, ,b,c]=['a',321,'b','c','d','e']
+console.log(a);
+console.log(b);
+console.log(c);
+
+let[a,b,c]='abc'
+console.log(a);
+console.log(b);
+console.log(c);
+
+let[f,s,t]=new Set([1,2,3])
+console.log(f, s, t);
+
+let dude={};
+[dude.fN, dude.sN]='Stepan Sidorov'.split(' ')
+console.log(dude.fN);
+console.log(dude.sN);
+for(let[key,value] of Object.entries(dude)){
+    console.log(`${key} : ${value}`);
+}
+
+let a='a';
+let b='b';
+[a,b]=[b,a]
+console.log(a);
+console.log(b);
+
+let[a,b,c]=['a','b','c','d','e','f','g']
+console.log(a);
+console.log(b);
+console.log(c);
+
+let[a,b,...rest]=['a','b','c','d','e','f','g']
+console.log(rest);
+console.log(rest[0]);
+console.log(rest.length);
+
+let[fN,sN]=[];
+console.log(fN);
+console.log(sN);
+
+let[fN='anonimous',sN='anonimatuuus']=[]
+console.log(fN);
+console.log(sN);
+
+let[fN='anonimous',sN='anonimatuuus']=['somebody']
+console.log(fN);
+console.log(sN);
+
+let[fN=prompt('First Name?'),sN=prompt('Second Name?')]=[]
+console.log(fN);
+console.log(sN);
+
+let obj={
+    name: 'Stepan',
+    age:20
+}
+let{name,age}=obj;
+console.log(name, age);
+
+let obj={
+    name: 'Stepan',
+    age:20
+}
+let{age, name}=obj;
+console.log(name,age);
+
+let {name, age, sex}={sex: 'm', name: 'Number 9', age: 'idk'}
+console.log(name, age, sex);
+
+let obj={
+    name: 'Stepan',
+    age:20
+}
+let{name:n, age:a}=obj;
+console.log(n, a);
+
+let obj={
+    name: 'Stepan',
+    age:20
+}
+let{age, name, sex=prompt('Sex?')}=obj;
+console.log(age, name, sex);
+
+let obj={
+    name: 'Stepan',
+    age:20,
+    // ...
+}
+let{age}=obj;
+console.log(age);
+
+let obj={
+    name: 'Stepan',
+    age:20,
+    // ...
+}
+let{age,...rest}=obj;
+console.log(rest); // Stepan + ...
+
+let options = {
+    size: {
+      width: 100,
+      height: 200
+    },
+    items: ["Cake", "Donut"],
+    extra: true
+};
+let{size:{width,height}, items:[item1, item2], extra}=options;
+console.log(width);
+console.log(height);
+console.log(item1);
+console.log(item2);
+console.log(extra);
+
+let user={
+    name: 'John',
+    age: 30
+}
+let{name, age:years, isAdmin=false}=user;
+console.log(name);
+console.log(years);
+console.log(isAdmin);
 */
+
+
+
+
 
 
 
