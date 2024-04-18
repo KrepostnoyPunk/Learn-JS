@@ -3106,11 +3106,72 @@ let{name, age:years, isAdmin=false}=user;
 console.log(name);
 console.log(years);
 console.log(isAdmin);
+
+let[a,b,c]=['a','b','c']
+console.log(a);
+
+let x=1;
+let y=2;
+[x,y]=[y,x]
+console.log(x);
+console.log(y);
+
+let arr=['a','b','c','d','e','f','g'];
+let[a,b,,c]=arr;
+console.log(c);
+
+let arr=['a','b'];
+let[a,b,c=0]=arr;
+console.log(c);
+
+let[[a,b,c,d]]=[['f','s','t','f']]
+console.log(d);
+
+let obj={
+    name: 'Alice',
+    age: 30
+}
+let{name,age}=obj;
+console.log(name);
+console.log(age);
+
+let obj={
+    person: {
+        name: 'John',
+        age: 30
+    }
+}
+let{person: {name, age}}=obj;
+console.log(name);
+console.log(age);
+
+let obj={
+    name: 'Alice',
+    surname: 'Wonder'
+}
+let{name:first,surname:last}=obj;
+console.log(first);
+console.log(last);
+
+let obj={}
+let{a=0}=obj;
+console.log(a);
+
+let arr=['a','b','c','d','e','f','g'];
+let[a,b,c,...rest]=arr;
+console.log(rest);
+
+let obj={
+    a: 1,
+    b: 2,
+    c: 3,
+    d: 4,
+    e: 5,
+    f: 6
+}
+let{a,b,...rest}=obj;
+console.log(rest);
 */
-
-
-
-
 
 
 
